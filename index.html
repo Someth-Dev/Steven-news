@@ -1,0 +1,1292 @@
+<!DOCTYPE html>
+<html lang="km">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ស្ទេវេន ញូរ - ព័ត៌មានថ្មីបំផុត</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Battambang:wght@400;700&family=Moul&family=Siemreap&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-color: #f12727; /* Vibrant red, kept as is */
+    --primary-dark: #d91a1a; /* Slightly darker red, consistent hue */
+    --primary-darker: #b21212; /* Darkest red, symmetrical progression */
+    --accent-color: #2a9d8f; /* Teal, complementary to red for balance */
+    --accent-dark: #1f776d; /* Darker teal, matching primary progression */
+    --text-color: #333333; /* Neutral dark, unchanged */
+    --text-light: #666666; /* Neutral light, unchanged */
+    --light-bg: #f8f9fa; /* Background, unchanged */
+    --border-radius: 12px; /* Unchanged */
+    --box-shadow: 0 4px 12px rgba(0,0,0,0.15); /* Unchanged */
+    --transition: all 0.3s ease; /* Unchanged */
+}
+body {
+    font-family: 'Battambang', Arial, sans-serif;
+    background-color: var(--light-bg);
+    color: var(--text-color);
+    line-height: 1.7;
+}
+
+.top-bar {
+    background-color: #1a1a1a;
+    color: #fff;
+    padding: 8px 0;
+    font-size: 13px;
+}
+
+.top-bar-content {
+    max-width: 1280px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 30px;
+}
+
+.social-icons a {
+    color: #fff;
+    margin-left: 20px;
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+.social-icons a:hover {
+    color: var(--primary-color);
+}
+
+.header {
+    background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+    padding: 20px 0;
+    box-shadow: var(--box-shadow);
+}
+
+.header-content {
+    max-width: 1280px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 30px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+.logo-image {
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
+    margin-right: 15px;
+    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2));
+}
+
+.logo-text {
+    font-family: 'Moul', cursive;
+    font-size: 32px;
+    color: white;
+    font-weight: normal;
+}
+
+.search-bar {
+    display: flex;
+    background-color: white;
+    border-radius: 50px;
+    overflow: hidden;
+    padding: 8px 15px;
+    width: 300px;
+    box-shadow: var(--box-shadow);
+}
+
+.search-bar input {
+    border: none;
+    outline: none;
+    padding: 8px;
+    flex-grow: 1;
+    font-family: 'Battambang', Arial, sans-serif;
+}
+
+.search-bar button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--primary-color);
+    font-size: 16px;
+}
+
+.nav-bar {
+    background-color: var(--primary-dark);
+    padding: 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: var(--box-shadow);
+}
+
+.nav-content {
+    max-width: 1280px;
+    margin: 0 auto;
+    display: flex;
+    padding: 0 30px;
+}
+
+.nav-item {
+    color: white;
+    text-decoration: none;
+    padding: 18px 25px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: var(--transition);
+    font-weight: bold;
+    position: relative;
+}
+
+.nav-item:hover {
+    background-color: var(--primary-darker);
+}
+
+.nav-item.active {
+    background-color: var(--primary-darker);
+}
+
+.nav-item.active::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background-color: white;
+}
+
+.breaking-news {
+    background-color: #fff;
+    padding: 12px 0;
+    border-bottom: 2px solid #e5e5e5;
+    overflow: hidden;
+    margin-bottom: 30px;
+}
+
+.breaking-container {
+    max-width: 1280px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    padding: 0 30px;
+}
+
+.breaking-title {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 8px 20px;
+    margin-right: 20px;
+    font-weight: bold;
+    border-radius: var(--border-radius);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.ticker-wrapper {
+    overflow: hidden;
+    flex-grow: 1;
+}
+
+.ticker {
+    display: inline-block;
+    white-space: nowrap;
+    animation: ticker 25s linear infinite;
+}
+
+.ticker-item {
+    display: inline-block;
+    margin-right: 50px;
+    font-size: 14px;
+}
+
+@keyframes ticker {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-100%); }
+}
+
+.container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 30px 50px;
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    gap: 30px;
+}
+
+.featured-section {
+    background: white;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: var(--box-shadow);
+    margin-bottom: 30px;
+}
+
+.featured-news {
+    position: relative;
+    height: 450px;
+    overflow: hidden;
+}
+
+.featured-news img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.featured-news:hover img {
+    transform: scale(1.1);
+}
+
+.featured-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(transparent, rgba(0,0,0,0.85));
+    color: white;
+    padding: 60px 30px 30px;
+}
+
+.featured-category {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 6px 12px;
+    border-radius: 4px;
+    font-size: 13px;
+    margin-bottom: 12px;
+    display: inline-block;
+}
+
+.featured-title {
+    font-family: 'Siemreap', serif;
+    font-size: 30px;
+    font-weight: bold;
+    line-height: 1.4;
+    margin-bottom: 12px;
+}
+
+.featured-meta {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    opacity: 0.9;
+}
+
+.featured-meta i {
+    margin-right: 6px;
+}
+
+.featured-meta span {
+    margin-right: 20px;
+}
+
+.category-section {
+    margin-bottom: 30px;
+    box-shadow: var(--box-shadow);
+    border-radius: var(--border-radius);
+    overflow: hidden;
+}
+
+.section-header {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 15px 25px;
+    font-family: 'Siemreap', serif;
+    font-weight: bold;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.section-header a {
+    color: white;
+    font-size: 14px;
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+.section-header a:hover {
+    color: #f0f0f0;
+}
+
+.news-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+    padding: 25px;
+    background: white;
+}
+
+.news-item {
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+    color: inherit;
+    transition: var(--transition);
+}
+
+.news-item:hover {
+    transform: translateY(-8px);
+}
+
+.news-image-container {
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+    height: 200px;
+}
+
+.news-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.news-item:hover img {
+    transform: scale(1.15);
+}
+
+.news-category {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    background-color: var(--primary-color);
+    color: white;
+    padding: 4px 10px;
+    border-radius: 4px;
+    font-size: 12px;
+}
+
+.news-item-title {
+    margin-top: 15px;
+    font-family: 'Battambang', serif;
+    font-size: 18px;
+    line-height: 1.5;
+    color: var(--text-color);
+    font-weight: bold;
+}
+
+.news-item-meta {
+    display: flex;
+    align-items: center;
+    font-size: 13px;
+    color: var(--text-light);
+    margin-top: 10px;
+}
+
+.news-item-meta i {
+    margin-right: 6px;
+}
+
+.video-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+    padding: 25px;
+    background: white;
+}
+
+.video-item {
+    text-decoration: none;
+    color: inherit;
+    transition: var(--transition);
+}
+
+.video-item:hover {
+    transform: translateY(-8px);
+}
+
+.video-thumbnail {
+    position: relative;
+    width: 100%;
+    height: 180px;
+    overflow: hidden;
+    border-radius: 8px;
+}
+
+.video-thumbnail img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.video-item:hover .video-thumbnail img {
+    transform: scale(1.15);
+}
+
+.play-button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 60px;
+    height: 60px;
+    background-color: rgba(199, 0, 57, 0.85);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 24px;
+    transition: var(--transition);
+}
+
+.video-item:hover .play-button {
+    background-color: var(--primary-color);
+}
+
+.video-duration {
+    position: absolute;
+    bottom: 12px;
+    right: 12px;
+    background-color: rgba(0,0,0,0.8);
+    color: white;
+    padding: 4px 10px;
+    border-radius: 4px;
+    font-size: 12px;
+}
+
+.video-title {
+    margin-top: 15px;
+    font-size: 16px;
+    line-height: 1.5;
+    color: var(--text-color);
+    font-weight: bold;
+}
+
+.video-meta {
+    display: flex;
+    align-items: center;
+    font-size: 13px;
+    color: var(--text-light);
+    margin-top: 8px;
+}
+
+.video-meta i {
+    margin-right: 6px;
+}
+
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.sidebar-section {
+    background: white;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: var(--box-shadow);
+}
+
+.sidebar-header {
+    font-family: 'Siemreap', serif;
+    padding: 15px 20px;
+    font-weight: bold;
+    color: white;
+    background-color: var(--primary-color);
+}
+
+.sidebar-content {
+    padding: 20px;
+}
+
+.sidebar-news-item {
+    display: flex;
+    gap: 15px;
+    padding: 15px 0;
+    text-decoration: none;
+    color: inherit;
+    border-bottom: 1px solid #eee;
+    transition: var(--transition);
+}
+
+.sidebar-news-item:hover {
+    transform: translateX(8px);
+}
+
+.sidebar-news-item:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.sidebar-news-item:first-child {
+    padding-top: 0;
+}
+
+.sidebar-img-container {
+    position: relative;
+    width: 100px;
+    height: 80px;
+    flex-shrink: 0;
+    overflow: hidden;
+    border-radius: 6px;
+}
+
+.sidebar-news-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.sidebar-news-item:hover img {
+    transform: scale(1.15);
+}
+
+.sidebar-news-title {
+    font-size: 15px;
+    line-height: 1.5;
+    color: var(--text-color);
+    font-weight: bold;
+}
+
+.sidebar-news-meta {
+    font-size: 13px;
+    color: var(--text-light);
+    margin-top: 8px;
+    display: flex;
+    align-items: center;
+}
+
+.sidebar-news-meta i {
+    margin-right: 6px;
+}
+
+.subscribe-section {
+    background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+    padding: 40px;
+    border-radius: var(--border-radius);
+    color: white;
+    text-align: center;
+}
+
+.subscribe-title {
+    font-family: 'Moul', cursive;
+    font-size: 22px;
+    margin-bottom: 20px;
+}
+
+.subscribe-form {
+    display: flex;
+    margin-top: 25px;
+}
+
+.subscribe-form input {
+    flex-grow: 1;
+    padding: 15px 20px;
+    border: none;
+    border-radius: 50px 0 0 50px;
+    outline: none;
+    font-family: 'Battambang', Arial, sans-serif;
+    font-size: 15px;
+}
+
+.subscribe-form button {
+    background-color: #1a1a1a;
+    color: white;
+    border: none;
+    padding: 0 25px;
+    border-radius: 0 50px 50px 0;
+    cursor: pointer;
+    transition: var(--transition);
+    font-family: 'Battambang', Arial, sans-serif;
+    font-weight: bold;
+}
+
+.subscribe-form button:hover {
+    background-color: #000;
+}
+
+.calendar-section {
+    background-color: white;
+    padding: 20px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+}
+
+.calendar-header {
+    text-align: center;
+    margin-bottom: 15px;
+    font-family: 'Moul', cursive;
+    color: var(--primary-color);
+}
+
+.calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 8px;
+}
+
+.calendar-day {
+    text-align: center;
+    padding: 8px;
+    font-size: 13px;
+    border-bottom: 2px solid #eee;
+    font-weight: bold;
+}
+
+.calendar-date {
+    text-align: center;
+    padding: 10px;
+    font-size: 13px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.calendar-date:hover {
+    background-color: #f0f0f0;
+}
+
+.calendar-date.current {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.calendar-date.has-event {
+    border-bottom: 3px solid var(--accent-color);
+}
+
+.footer {
+    background-color: #1a1a1a;
+    color: #fff;
+    padding: 50px 0 0;
+    margin-top: 50px;
+}
+
+.footer-content {
+    max-width: 1280px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 40px;
+    padding: 0 30px;
+}
+
+.footer-section h3 {
+    color: #fff;
+    font-family: 'Siemreap', serif;
+    margin-bottom: 25px;
+    padding-bottom: 12px;
+    border-bottom: 3px solid var(--primary-color);
+}
+
+.footer-links {
+    list-style: none;
+}
+
+.footer-links li {
+    margin-bottom: 12px;
+}
+
+.footer-links a {
+    color: #ccc;
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+.footer-links a:hover {
+    color: #fff;
+}
+
+.footer-bottom {
+    background-color: #111;
+    padding: 20px 0;
+    text-align: center;
+    margin-top: 50px;
+    font-size: 14px;
+}
+
+.footer-bottom p {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 30px;
+}
+
+@media (max-width: 992px) {
+    .container {
+        grid-template-columns: 1fr;
+    }
+    
+    .news-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .nav-content {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    .nav-item {
+        padding: 14px 20px;
+        font-size: 15px;
+    }
+    
+    .news-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .featured-title {
+        font-size: 24px;
+    }
+    
+    .logo-text {
+        font-size: 26px;
+    }
+    
+    .search-bar {
+        display: none;
+    }
+    
+    .top-bar-content {
+        flex-direction: column;
+        align-items: center;
+        gap: 8px;
+    }
+    
+    .footer-content {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .featured-news {
+        height: 350px;
+    }
+    
+    .video-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .header-content {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .breaking-container {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .breaking-title {
+        margin-bottom: 8px;
+    }
+}
+    </style>
+</head>
+<body>
+    <div class="top-bar">
+        <div class="top-bar-content">
+            <div class="date">២០ ឧសភា ២០២៥ | អង្គារ</div>
+            <div class="social-icons">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-youtube"></i></a>
+                <a href="#"><i class="fab fa-telegram"></i></a>
+                <a href="#"><i class="fab fa-tiktok"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <header class="header">
+        <div class="header-content">
+            <a href="#" class="logo">
+                <img src="image/1.png" alt="Sstevenn new" class="logo-image">
+                <h1 class="logo-text">ស្ទេវេន ញូរ</h1>
+            </a>
+            <div class="search-bar">
+                <input type="text" placeholder="ស្វែងរក...">
+                <button><i class="fas fa-search"></i></button>
+            </div>
+        </div>
+    </header>
+
+    <nav class="nav-bar">
+        <div class="nav-content">
+            <a href="#" class="nav-item active"><i class="fas fa-home"></i> ទំព័រដើម</a>
+            <a href="#" class="nav-item">ព័ត៌មានជាតិ</a>
+            <a href="#" class="nav-item">អន្តរជាតិ</a>
+            <a href="#" class="nav-item">កីឡា</a>
+            <a href="#" class="nav-item">សេដ្ឋកិច្ច</a>
+            <a href="#" class="nav-item">អប់រំ</a>
+            <a href="#" class="nav-item">កម្សាន្ត</a>
+            <a href="#" class="nav-item">បច្ចេកវិទ្យា</a>
+            <a href="#" class="nav-item">ជីវិត</a>
+        </div>
+    </nav>
+
+    <div class="breaking-news">
+        <div class="breaking-container">
+            <div class="breaking-title">
+                <i class="fas fa-bolt"></i>     ថ្មី
+            </div>
+            <div class="ticker-wrapper">
+                <div class="ticker">
+                    <div class="ticker-item">ប្រធានរដ្ឋមន្ត្រីនឹងបំពេញទស្សនកិច្ចផ្លូវការនៅប្រទេសជប៉ុន | </div>
+                    <div class="ticker-item">ការប្រកួតបាល់ទាត់កម្ពុជាលីកនឹងចាប់ផ្តើមនៅសប្តាហ៍ក្រោយ | </div>
+                    <div class="ticker-item">រដ្ឋាភិបាលប្រកាសកញ្ចប់ថវិកាថ្មីសម្រាប់វិស័យអប់រំ | </div>
+                    <div class="ticker-item">តម្លៃប្រេងនៅតែបន្តធ្លាក់ចុះក្នុងទីផ្សារអន្តរជាតិ | </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <main>
+            <section class="featured-section">
+                <div class="featured-news">
+                    <img src="image/HM.jpg" alt="Featured News">
+                    <div class="featured-overlay">
+                        <span class="featured-category">ព័ត៌មានជាតិ</span>
+                        <h2 class="featured-title">រដ្ឋាភិបាលកម្ពុជាអនុម័តគម្រោងថ្មីដើម្បីជំរុញសេដ្ឋកិច្ចឌីជីថល និងបច្ចេកវិទ្យា</h2>
+                        <div class="featured-meta">
+                            <span><i class="far fa-clock"></i> ២០ ឧសភា ២០២៥</span>
+                            <span><i class="far fa-eye"></i> ១៥៧៦ នាក់</span>
+                            <span><i class="far fa-comment"></i> ៤៥ មតិ</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="category-section">
+                <div class="section-header">
+                    <span>ព័ត៌មានថ្មីៗ</span>
+                    <a href="#">មើលបន្ថែម <i class="fas fa-angle-right"></i></a>
+                </div>
+                <div class="news-grid">
+                    <a href="#" class="news-item">
+                        <div class="news-image-container">
+                            <img src="image/Bank.jpg" alt="News">
+                            <span class="news-category">សេដ្ឋកិច្ច</span>
+                        </div>
+                        <h3 class="news-item-title">ធនាគារជាតិនៃកម្ពុជា រៀបចំវេទិកាសេដ្ឋកិច្ចនិងហិរញ្ញវត្ថុប្រចាំឆ្នាំ</h3>
+                        <div class="news-item-meta">
+                            <i class="far fa-clock"></i> ២០ ឧសភា ២០២៥
+                        </div>
+                    </a>
+                    <a href="#" class="news-item">
+                        <div class="news-image-container">
+                            <img src="image/asian.jpg" alt="News">
+                            <span class="news-category">អន្តរជាតិ</span>
+                        </div>
+                        <h3 class="news-item-title">ការប្រជុំកំពូលអាស៊ាននឹងប្រព្រឹត្តទៅនៅប្រទេសឥណ្ឌូនេស៊ីខែក្រោយ</h3>
+                        <div class="news-item-meta">
+                            <i class="far fa-clock"></i> ១៩ ឧសភា ២០២៥
+                        </div>
+                    </a>
+                    <a href="#" class="news-item">
+                        <div class="news-image-container">
+                            <img src="image/moey.png" alt="News">
+                            <span class="news-category">សង្គម</span>
+                        </div>
+                        <h3 class="news-item-title">ក្រសួងអប់រំបើកវគ្គបណ្តុះបណ្តាលគ្រូបង្រៀនថ្មីសម្រាប់ការសិក្សាតាមប្រព័ន្ធឌីជីថល</h3>
+                        <div class="news-item-meta">
+                            <i class="far fa-clock"></i> ១៨ ឧសភា ២០២៥
+                        </div>
+                    </a>
+                    <a href="#" class="news-item">
+                        <div class="news-image-container">
+                            <img src="image/MPTC.jpg" alt="News">
+                            <span class="news-category">បច្ចេកវិទ្យា</span>
+                        </div>
+                        <h3 class="news-item-title">ក្រុមហ៊ុនបច្ចេកវិទ្យាកម្ពុជាចាប់ផ្តើមផលិតកម្មវិធីបកប្រែភាសាដែលប្រើបច្ចេកវិទ្យា AI</h3>
+                        <div class="news-item-meta">
+                            <i class="far fa-clock"></i> ១៧ ឧសភា ២០២៥
+                        </div>
+                    </a>
+                </div>
+            </section>
+
+            <section class="category-section">
+                <div class="section-header" style="background-color: #3182ce;">
+                    <span>កីឡា</span>
+                    <a href="#">មើលបន្ថែម <i class="fas fa-angle-right"></i></a>
+                </div>
+                <div class="news-grid">
+                    <a href="#" class="news-item">
+                        <div class="news-image-container">
+                            <img src="image/FFC.jpg" alt="Sports News">
+                            <span class="news-category">បាល់ទាត់</span>
+                        </div>
+                        <h3 class="news-item-title">ក្រុមបាល់ទាត់ជម្រើសជាតិកម្ពុជាត្រៀមប្រកួតពានរង្វាន់ AFF Cup</h3>
+                        <div class="news-item-meta">
+                            <i class="far fa-clock"></i> ២០ ឧសភា ២០២៥
+                        </div>
+                    </a>
+                    <a href="#" class="news-item">
+                        <div class="news-image-container">
+                            <img src="image/CPL.jpg" alt="Sports News">
+                            <span class="news-category">កីឡាក្នុងស្រុក</span>
+                        </div>
+                        <h3 class="news-item-title">ការប្រកួតបាល់ទាត់កម្ពុជាលីគ រដូវកាលថ្មីនឹងចាប់ផ្តើមនៅថ្ងៃទី១ មិថុនា</h3>
+                        <div class="news-item-meta">
+                            <i class="far fa-clock"></i> ១៩ ឧសភា ២០២៥
+                        </div>
+                    </a>
+                    <a href="#" class="news-item">
+                        <div class="news-image-container">
+                            <img src="image/Petang.jpg" alt="Sports News">
+                            <span class="news-category">អន្តរជាតិ</span>
+                        </div>
+                        <h3 class="news-item-title">ការប្រកួតប៉េតង់ថ្នាក់អាស៊ីអាគ្នេយ៍នឹងប្រារព្ធនៅកម្ពុជាខែក្រោយ</h3>
+                        <div class="news-item-meta">
+                            <i class="far fa-clock"></i> ១៨ ឧសភា ២០២៥
+                        </div>
+                    </a>
+                    <a href="#" class="news-item">
+                        <div class="news-image-container">
+                            <img src="image/Medal.jpg" alt="Sports News">
+                            <span class="news-category">កីឡាករ</span>
+                        </div>
+                        <h3 class="news-item-title">កីឡាករកម្ពុជាឈ្នះមេដាយមាសក្នុងការប្រកួតប្រដាល់លើកទី១០</h3>
+                        <div class="news-item-meta">
+                            <i class="far fa-clock"></i> ៧ ឧសភា ២០២៥
+                        </div>
+                    </a>
+                </div>
+            </section>
+
+            <section class="category-section">
+                <div class="section-header" style="background-color: #dd6b20;">
+                    <span>វីដេអូពេញនិយម</span>
+                    <a href="#">មើលបន្ថែម <i class="fas fa-angle-right"></i></a>
+                </div>
+                <div class="video-grid">
+                    <a href="#" class="video-item">
+                        <div class="video-thumbnail">
+                            <img src="image/open.webp" alt="Video">
+                            <div class="play-button"><i class="fas fa-play"></i></div>
+                            <div class="video-duration">៨:២៥</div>
+                        </div>
+                        <h3 class="video-title">ពិធីបើកការប្រកួតកីឡាជាតិលើកទី២៩ នៅរាជធានីភ្នំពេញ</h3>
+                        <div class="video-meta">
+                            <i class="far fa-eye"></i> ៨,៥៧៦ ការមើល
+                        </div>
+                    </a>
+                    <a href="#" class="video-item">
+                        <div class="video-thumbnail">
+                            <img src="image/Tech.jpg" alt="Video">
+                            <div class="play-button"><i class="fas fa-play"></i></div>
+                            <div class="video-duration">១២:៣០</div>
+                        </div>
+                        <h3 class="video-title">ពិភាក្សាពីសេដ្ឋកិច្ចឌីជីថលនិងការប្រើប្រាស់បច្ចេកវិទ្យាក្នុងសហគ្រាស</h3>
+                        <div class="video-meta">
+                            <i class="far fa-eye"></i> ៦,៤២១ ការមើល
+                        </div>
+                    </a>
+                    <a href="#" class="video-item">
+                        <div class="video-thumbnail">
+                            <img src="image/hunsen.jpg" alt="Video">
+                            <div class="play-button"><i class="fas fa-play"></i></div>
+                            <div class="video-duration">៥:១៧</div>
+                        </div>
+                        <h3 class="video-title">សម្តេចតេជោ ហ៊ុន សែន ថ្លែងសុន្ទរកថាក្នុងពិធីសំខាន់ៗ</h3>
+                        <div class="video-meta">
+                            <i class="far fa-eye"></i> ១២,៩៨៧ ការ�មើល
+                        </div>
+                    </a>
+                    <a href="#" class="video-item">
+                        <div class="video-thumbnail">
+                            <img src="image/goat.jpg" alt="Video">
+                            <div class="play-button"><i class="fas fa-play"></i></div>
+                            <div class="video-duration">១៥:៤៥</div>
+                        </div>
+                        <h3 class="video-title">កម្សាន្ត - តារាចម្រៀងថ្មីដែលកំពុងពេញនិយមក្នុងប្រទេសកម្ពុជា</h3>
+                        <div class="video-meta">
+                            <i class="far fa-eye"></i> ៥,៣២១ ការមើល
+                        </div>
+                    </a>
+                </div>
+            </section>
+        </main>
+
+        <aside class="sidebar">
+            <section class="sidebar-section">
+                <div class="sidebar-header">ព័ត៌មានពេញនិយម</div>
+                <div class="sidebar-content">
+                    <a href="#" class="sidebar-news-item">
+                        <div class="sidebar-img-container">
+                            <img src="image/E.png" alt="News">
+                        </div>
+                        <div>
+                            <h3 class="sidebar-news-title">រដ្ឋមន្ត្រីក្រសួងសេដ្ឋកិច្ចនិងហិរញ្ញវត្ថុអញ្ជើញចូលរួមកិច្ចប្រជុំនៅអឺរ៉ុប</h3>
+                            <div class="sidebar-news-meta">
+                                <i class="far fa-clock"></i> ២០ ឧសភា ២០២៥
+                            </div>
+                        </div>
+                    </a>
+                    <a href="#" class="sidebar-news-item">
+                        <div class="sidebar-img-container">
+                            <img src="image/csx.webp" alt="News">
+                        </div>
+                        <div>
+                            <h3 class="sidebar-news-title">ទីផ្សារមូលបត្រកម្ពុជាមានការកើនឡើងក្នុងត្រីមាសទីមួយឆ្នាំ២០២៥</h3>
+                            <div class="sidebar-news-meta">
+                                <i class="far fa-clock"></i> ១៩ ឧសភា ២០២៥
+                            </div>
+                        </div>
+                    </a>
+                    <a href="#" class="sidebar-news-item">
+                        <div class="sidebar-img-container">
+                            <img src="image/hang.jpg" alt="News">
+                        </div>
+                        <div>
+                            <h3 class="sidebar-news-title">ក្រសួងអប់រំប្រកាសពីកម្មវិធីអាហារូបករណ៍សិក្សានៅបរទេស</h3>
+                            <div class="sidebar-news-meta">
+                                <i class="far fa-clock"></i> ៧ ឧសភា ២០២៥
+                            </div>
+                        </div>
+                    </a>
+                    <a href="#" class="sidebar-news-item">
+                        <div class="sidebar-img-container">
+                            <img src="image/aaa.jpg" alt="News">
+                        </div>
+                        <div>
+                            <h3 class="sidebar-news-title">កម្ពុជានឹងរៀបចំពិព័រណ៍ជាតិលើកទី១៥ នៅខែមិថុនា</h3>
+                            <div class="sidebar-news-meta">
+                                <i class="far fa-clock"></i> ១៧ ឧសភា ២០២៥
+                            </div>
+                        </div>
+                    </a>
+                    <a href="#" class="sidebar-news-item">
+                        <div class="sidebar-img-container">
+                            <img src="image/derder.jpg" alt="News">
+                        </div>
+                        <div>
+                            <h3 class="sidebar-news-title">វិស័យទេសចរណ៍កម្ពុជារំពឹងនឹងកើនឡើង៣០% ក្នុងឆ្នាំ២០២៥</h3>
+                            <div class="sidebar-news-meta">
+                                <i class="far fa-clock"></i> ៧ ឧសភា ២០២៥
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </section>
+
+            <section class="subscribe-section">
+                <h3 class="subscribe-title">ទទួលព័ត៌មានថ្មីៗ</h3>
+                <p>ចុះឈ្មោះដើម្បីទទួលបានព័ត៌មានថ្មីៗ និងកម្មវិធីពិសេសផ្សេងៗ</p>
+                <div class="subscribe-form">
+                    <input type="email" placeholder="អ៊ីមែលរបស់អ្នក">
+                    <button type="submit">ចុះឈ្មោះ</button>
+                </div>
+            </section>
+
+            <section class="sidebar-section">
+                <div class="sidebar-header" style="background-color: #9f7aea;">កម្សាន្ត</div>
+                <div class="sidebar-content">
+                    <a href="#" class="sidebar-news-item">
+                        <div class="sidebar-img-container">
+                            <img src="image/goat2.jpg" alt="Entertainment">
+                        </div>
+                        <div>
+                            <h3 class="sidebar-news-title">តារាចម្រៀងល្បីៗនឹងធ្វើការសម្តែងនៅរោងមហោស្រពភ្នំពេញ</h3>
+                            <div class="sidebar-news-meta">
+                                <i class="far fa-clock"></i> ២០ ឧសភា ២០២៥
+                            </div>
+                        </div>
+                    </a>
+                    <a href="#" class="sidebar-news-item">
+                        <div class="sidebar-img-container">
+                            <img src="image/movie.jpg" alt="Entertainment">
+                        </div>
+                        <div>
+                            <h3 class="sidebar-news-title">ភាពយន្តខ្មែរថ្មីនឹងចាក់បញ្ចាំងនៅស ability="true">
+                            <div class="sidebar-news-meta">
+                                <i class="far fa-clock"></i> ៧ ឧសភា ២០២៥
+                            </div>
+                        </div>
+                    </a>
+                    <a href="#" class="sidebar-news-item">
+                        <div class="sidebar-img-container">
+                            <img src="image/kak.jpg" alt="Entertainment">
+                        </div>
+                        <div>
+                            <h3 class="sidebar-news-title">ព្រឹត្តិការណ៍វប្បធម៌អន្តរជាតិនឹងប្រារព្ធនៅកម្ពុជាខែក្រោយ</h3>
+                            <div class="sidebar-news-meta">
+                                <i class="far fa-clock"></i> ៧ ឧសភា ២០២៥
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </section>
+
+            <section class="calendar-section">
+                <div class="calendar-header">
+                    <h3>ខែ ឧសភា ២០២៥</h3>
+                </div>
+                <div class="calendar-grid">
+                    <div class="calendar-day">ច</div>
+                    <div class="calendar-day">អ</div>
+                    <div class="calendar-day">ព</div>
+                    <div class="calendar-day">ព្រ</div>
+                    <div class="calendar-day">សុ</div>
+                    <div class="calendar-day">ស</div>
+                    <div class="calendar-day">អា</div>
+                    <div class="calendar-date">១</div>
+                    <div class="calendar-date">២</div>
+                    <div class="calendar-date has-event">៩</div>
+                    <div class="calendar-date">៤</div>
+                    <div class="calendar-date">៥</div>
+                    <div class="calendar-date has-event">៦</div>
+                    <div class="calendar-date">៧</div>
+                    <div class="calendar-date">៨</div>
+                    <div class="calendar-date">៩</div>
+                    <div class="calendar-date">១០</div>
+                    <div class="calendar-date has-event">១១</div>
+                    <div class="calendar-date">១២</div>
+                    <div class="calendar-date">១៣</div>
+                    <div class="calendar-date">១៤</div>
+                    <div class="calendar-date">១៥</div>
+                    <div class="calendar-date has-event">១៦</div>
+                    <div class="calendar-date">១៧</div>
+                    <div class="calendar-date">១៨</div>
+                    <div class="calendar-date">១៩</div>
+                    <div class="calendar-date">២០</div>
+                    <div class="calendar-date current">២១</div>
+                    <div class="calendar-date">២២</div>
+                    <div class="calendar-date">២៣</div>
+                    <div class="calendar-date has-event">២៤</div>
+                    <div class="calendar-date">២៥</div>
+                    <div class="calendar-date">២៦</div>
+                    <div class="calendar-date">២៧</div>
+                    <div class="calendar-date">២៨</div>
+                    <div class="calendar-date">២៩</div>
+                    <div class="calendar-date">៣០</div>
+                    <div class="calendar-date">៣១</div>
+                </div>
+            </section>
+
+            <section class="sidebar-section">
+                <div class="sidebar-header" style="background-color: #48bb78;">បច្ចេកវិទ្យា</div>
+                <div class="sidebar-content">
+                    <a href="#" class="sidebar-news-item">
+                        <div class="sidebar-img-container">
+                            <img src="image/ttt.jpg" alt="Technology">
+                        </div>
+                        <div>
+                            <h3 class="sidebar-news-title">ក្រុមហ៊ុនធំៗចាប់អារម្មណ៍វិនិយោគលើបច្ចេកវិទ្យានៅកម្ពុជា</h3>
+                            <div class="sidebar-news-meta">
+                                <i class="far fa-clock"></i> ២០ ឧសភា ២០២៥
+                            </div>
+                        </div>
+                    </a>
+                    <a href="#" class="sidebar-news-item">
+                        <div class="sidebar-img-container">
+                            <img src="image/ar vr.jpg" alt="Technology">
+                        </div>
+                        <div>
+                            <h3 class="sidebar-news-title">ការប្រើប្រាស់បច្ចេកវិទ្យាក្នុងវិស័យអប់រំនៅកម្ពុជា</h3>
+                            <div class="sidebar-news-meta">
+                                <i class="far fa-clock"></i> ៧ ឧសភា ២ៀ២៥
+                            </div>
+                        </div>
+                    </a>
+                    <a href="#" class="sidebar-news-item">
+                        <div class="sidebar-img-container">
+                            <img src="image/mmmppttcc.jpg" alt="Technology">
+                        </div>
+                        <div>
+                            <h3 class="sidebar-news-title">សន្និសីទបច្ចេកវិទ្យាធំបំផុតនឹងប្រារព្ធនៅកម្ពុជាក្នុងពេលឆាប់ៗ</h3>
+                            <div class="sidebar-news-meta">
+                                <i class="far fa-clock"></i> ៧ ឧសភា ២០២៥
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </section>
+        </aside>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>អំពីយើង</h3>
+                <p>ស្ទេវេន ញូរ គឺជាប្រភពព័ត៌មានឈានមុខគេនៅកម្ពុជា។ យើងផ្តល់ជូនព័ត៌មានថ្មីៗ និងទាន់សម័យពីក្នុងស្រុក និងអន្តរជាតិ។</p>
+                <div class="social-icons" style="margin-top: 15px;">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                    <a href="#"><i class="fab fa-telegram"></i></a>
+                    <a href="#"><i class="fab fa-tiktok"></i></a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h3>ជំពូក</h3>
+                <ul class="footer-links">
+                    <li><a href="#">ព័ត៌មានជាតិ</a></li>
+                    <li><a href="#">អន្តរជាតិ</a></li>
+                    <li><a href="#">កីឡា</a></li>
+                    <li><a href="#">សេដ្ឋកិច្ច</a></li>
+                    <li><a href="#">កម្សាន្ត</a></li>
+                    <li><a href="#">បច្ចេកវិទ្យា</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>ទំនាក់ទំនង</h3>
+                <ul class="footer-links">
+                    <li><i class="fas fa-map-marker-alt"></i> បន្ទប់លេខ ០១, មហាវិថីសហព័ន្ធរុស្សី, ភ្នំពេញ</li>
+                    <li><i class="fas fa-phone"></i> ០៧១៥៣០៣៦២២</li>
+                    <li><i class="fas fa-envelope"></i> stevenhazadd@gmail.com</li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>តំណភ្ជាប់</h3>
+                <ul class="footer-links">
+                    <li><a href="#">គោលការណ៍ឯកជនភាព</a></li>
+                    <li><a href="#">លក្ខខណ្ឌប្រើប្រាស់</a></li>
+                    <li><a href="#">ស្វែងរកការងារ</a></li>
+                    <li><a href="#">ទំនាក់ទំនង</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© ២០២៥ ស្ទេវេន ញូរ រក្សាសិទ្ធិគ្រប់យ៉ាង។ រចនាដោយ ស្ទេវេន ញូរ ក្រុម</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const ticker = document.querySelector('.ticker');
+            ticker.addEventListener('animationiteration', function() {
+                const firstItem = ticker.querySelector('.ticker-item:first-child');
+                const clone = firstItem.cloneNode(true);
+                ticker.appendChild(clone);
+                setTimeout(() => {
+                    ticker.removeChild(firstItem);
+                }, 100);
+            });
+
+            const navItems = document.querySelectorAll('.nav-item');
+            navItems.forEach(item => {
+                item.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    navItems.forEach(nav => nav.classList.remove('active'));
+                    this.classList.add('active');
+                });
+            });
+        });
+    </script>
+</body>
+</html> 
